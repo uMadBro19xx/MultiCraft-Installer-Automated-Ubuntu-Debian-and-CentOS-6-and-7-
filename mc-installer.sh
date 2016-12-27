@@ -1,7 +1,14 @@
 #!/bin/bash
 
- read -p "Do you wish to install Multicraft? (y/n) Please keep in mind that we provide no support for this script. Report any issues on our GitHub repo. (y/n)" CONT
-if [ "$CONT" = "y" ]; then
+#/**
+# *
+# *   Copyright © 2010-2016 by MegaByteHosting, BlueLeafHosting, DavidBrockway, Kenner All rights reserved.
+# *   This script is inteneded for the use of megabytehosting and blueleafhosting but you may with to use it we do not give 
+# *   support to anyone who used this script. We hope you like it use it at your own risk!
+# *   
+# *
+# **/
+
  echo
  echo "***"
  echo "*** Welcome to Multicraft 7 centos install script! (Custom)"
@@ -158,7 +165,4 @@ Continue the setup in http://your_server_ip/html/multicraft/install.php"
 echo "Exiting MultiCraft centos 7 installer script!"
  sleep 1
   quit
-else
-  echo "Oh well, you do not want to use our installer. See ya!";
-  cd ~
-fi
+
