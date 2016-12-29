@@ -1,30 +1,38 @@
 #!/bin/bash
-# The GPL License (GPL-3.0)
+# The MIT License (MIT)
 
-#/**
-# *
-# *   Copyright © 2010-2016 by MegaByteHosting, BlueLeafHosting, DavidBrockway, Kenner All rights reserved.
-# *   This script is inteneded for the use of megabytehosting and blueleafhosting but you may with to use it we do not give 
-# *   support to anyone who used this script. We hope you like it use it at your own risk!
-# *   
-# *
-# **/
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+
 # Supported Versions: Ubuntu, Debian and CentOS 6 and 7.
 
-read -p "Do you wish to install Multicraft? (y/n) Please keep in mind that we provide no support for this script. Report any issues on our GitHub repo. (y/n)" CONT
-if [ "$CONT" = "y" ]; then
- echo
- echo "***"
- echo "*** Welcome to Multicraft 7 centos install script! (Custom)"
- echo "***"
- echo
- echo "This installer will help you get Multicraft up and running also install all the packages and dependencies."
- echo "No changes are made to the system until all of the required information has been collected."
- echo
- echo "NOTE: This script automates the installation as described on the Multicraft website. Use it at your own risk."
- echo "Custom coded and edited by David Brockway."
- echo
- echo   
+# Welcome Message
+echo
+echo "***"
+echo "*** Welcome to Multicraft!"
+echo "***"
+echo
+echo "This installer will help you get Multicraft up and running."
+echo "No changes are made to the system until all of the required information has been collected."
+echo
+echo "NOTE: This script automates the installation as described on the Multicraft website. Use it at your own risk."
+echo
+echo
 
 # Update Resolve Servers
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
@@ -141,14 +149,12 @@ mv multicraft.conf.dist multicraft.conf
 mv multicraft ${WebRoot}/
 mkdir jar
 cd jar
-wget --no-check-certificate "https://github.com/JustOneMoreBlock/shell-scripts/blob/master/files/multicraft-jar-confs.zip?raw=true" -O multicraft-jar-confs.zip;
+wget --no-check-certificate "https://github.com/DavidBrockway/multicraft-installer-custom-centos-7/raw/master/multicraft-jar-confs.zip?raw=true" -O multicraft-jar-confs.zip;
 unzip -o multicraft-jar-confs.zip
 rm -fv multicraft-jar-confs.zip
 wget http://s3.amazonaws.com/MCProHosting-Misc/Spigot/Spigot.jar -O Spigot.jar
 wget http://s3.amazonaws.com/MCProHosting-Misc/PaperSpigot/PaperSpigot.jar -O PaperSpigot.jar
-wget http://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar -O Bungeecord.jar
-cd /home/root/multicraft/
-
+wget http://ci.md-5.net/job/BungeeCord/lastSuccessfulBuild/artifact/bootstrap/target/BungeeCord.jar -O Bungeecord.jarcd /home/root/multicraft/
 # Multicraft Panel
 ProtectedConf="/protected/config/config.php"
 cd ${WebRoot}/multicraft/
@@ -344,11 +350,3 @@ cat > rc.local << eof
 eof
 chmod +x /etc/rc.local
 /etc/rc.local
-
-echo "Exiting MultiCraft installer script!"
- sleep 1
-  quit
-else
-  echo "Oh well, you do not want to use our installer. See ya!";
-  cd ~
-fi
