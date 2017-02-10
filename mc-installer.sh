@@ -21,8 +21,10 @@
  echo "Custom coded and edited by David Brockway."
  echo
  echo   
+ 
+read -p "press [enter] to start..
 
- echo "Updating your centos system os1"
+ echo "Updating your centos system os"
 
  sleep 1
 
