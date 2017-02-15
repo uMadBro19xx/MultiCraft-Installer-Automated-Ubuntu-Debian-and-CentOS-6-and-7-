@@ -29,6 +29,9 @@ read -p "press [enter] to start..
  sleep 1
 
   rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+  yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+  yum -y install https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
+  echo 0 > /sys/fs/selinux/enforce
   yum -y update
 
 ### Installation
@@ -164,7 +167,6 @@ Continue the setup in http://your_server_ip/html/multicraft/install.php"
  echo
  echo
  
-
 echo "Exiting MultiCraft centos 7 installer script!"
  sleep 1
   quit
