@@ -1,8 +1,6 @@
 #!/bin/bash
 # The MIT License (MIT)
 
-# Copyright (c) 2016 Cory Gillenkirk
-
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
@@ -22,22 +20,6 @@
 # SOFTWARE.
 
 # Supported Versions: Ubuntu, Debian and CentOS 6 and 7.
-
-
- echo
- echo "***"
- echo "*** Welcome to Multicraft installer script! (Supports Ubuntu, Debian and CentOS 6 and 7)"
- echo "***"
- echo
- echo "This installer will help you get Multicraft up and running also install all the packages and dependencies."
- echo "No changes are made to the system until all of the required information has been collected."
- echo
- echo "NOTE: This script automates the installation as described on the Multicraft website. Use it at your own risk."
- echo
- echo   
- 
-read -p "press [enter] to start..
-
 
 # Update Resolve Servers
 echo "nameserver 8.8.8.8" > /etc/resolv.conf
@@ -372,10 +354,6 @@ mysql -e "SET PASSWORD FOR 'root'@'127.0.0.1' = PASSWORD('${MySQLRoot}');"
 mysql -Dmysql -e "DELETE FROM user WHERE Password='';"
 mysql -Dmysql -e "FLUSH PRIVILEGES;"
 
-echo "***"
-echo "*** You have successfully install Multicraft"
-echo "***"
- 
 # TESTED: Everything above should work on all supported distros.
 
 # Configure New Admin Password
@@ -387,3 +365,4 @@ echo "***"
 
 # mysql -p${Panel} -u panel -D panel -e "UPDATE user SET password='${SaltPassword}' WHERE name='admin';"
 # mysql -p${Daemon} -u daemon -D daemon -e "UPDATE ftp_user SET password='${SaltPassword}' WHERE name='admin';"
+
