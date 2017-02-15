@@ -1,30 +1,60 @@
-Multicraft-installer-custom-centos-7 Version 1.5
-===================
+# MultiCraft Installer Script
+ MultiCraft Installer Script. for Ubuntu, Debian and CentOS 6 and 7:)
 
-Multicraft custom installer for centos 7. This script will install all the components and packages, dependencies multicraft needs to run. No support this script is intended for megabyte hosting and blueleaf hosting but you're free to use it at your own risk!
+# Auto Install Multicraft and Libs
+(Supported Versions: Ubuntu, Debian and CentOS 6 and 7)
+```
+yum -y install wget; apt-get -y install wget; wget https://raw.githubusercontent.com/JustOneMoreBlock/shell-scripts/master/auto-install-multicraft.sh -O auto-install-multicraft.sh; chmod +x auto-install-multicraft.sh; sh auto-install-multicraft.sh
+```
 
-I have attached PocketMine, Genisys, ImagicalMine Phar, Config Files Also Included the php binarys files working
+Auto Install cron for Automatic Security Updates: (Supported Versions: Ubuntu, Debian and CentOS 6 and 7)
+```
+yum -y install wget; sudo apt-get -y install wget; wget; wget https://raw.githubusercontent.com/JustOneMoreBlock/shell-scripts/master/automatic-security-updates.sh -O automatic-security-updates.sh; chmod +x automatic-security-updates.sh; sh automatic-security-updates.sh
+```
 
-Pull Requests
-=============
-PHP accepts pull requests via github. Discussions are done on github, but
-depending on the topic can also be relayed to the official developer
-mailing list david.brockway@megabytehosting.net
-New features require approval and must be accepted by the developers.
+auto-install-multicraft.sh
+- Use Google Resolve Servers
+- Password Generator
+- Installs: Apache, PHP, MySQL, Curl, Git, etc...
+- Automatically Configures root password and stores it in /root/.my.cnf
+- Automatically Configures usernames/password for daemon and panel for the use of Multicraft and stores these passwords in /root/mc.cnf
+- Automatically downloads the latest Multicraft.
+- Automatically downloads jars and it's configuration files.
+- Automatically sets up Multicraft Security.
+- Automatically configures multicraft.conf.
+- Automatically configures config.php for Multicraft.
+- Automated Java Installer
+- Automated phpMyAdmin Installer with password generated blowfish setup.
 
-Bug fixes **do not** require an issue, to be open a a developher will
-give you support and try to fix the issue you have. 
+# Forbidden Error on Multicraft download?
+Multicraft has enabled CloudFlare Protection, and you have to enter a reCaptcha.
+
+- Fix (Either Multicraft allows that through, or provide another hosted solution.)
+- Otherwise, we offer a hosted solution.
+
+In the meantime, you can edit Line131
+https://github.com/JustOneMoreBlock/shell-scripts/blob/master/auto-install-multicraft.sh#L131
+
+Change:
+```
+http://multicraft.org/download/linux64
+```
+
+To:
+```
+Your own downloaded link. (Dropbox or w/e)
+```
+
+# Few Additional Things
+- Automated php.ini detector (Used to create a symlink to /etc/php.ini)
+- Automated memory detector (Used to configure your multicraft.conf max memory.
+
+Automated Java Installer for RPMs uses: install_java.sh file which was created by:
+- Author: Mike G. aka metalcated and partially forked from n0ts (https://github.com/metalcated/)
+
                          
-Instructions Step 1
-===================
-1. Conect to your ftp server.
-2. Upload the script to the server /root directory.
-4. Open putty ssh conection to your server.
-5. Change the script file permition with this command. chmod 777 /root/mc-installer.sh
-6. Run the following command to start the script ./mc-installer.sh
-7. Let the installer run and follow the instructions it tells you to complete.
-
-PocketMine, Genisys, ImagicalMine installation instructions. Step 2
+                                      
+PocketMine, Genisys, ImagicalMine installation instructions. Step 1
 ===================
 
 1. Downalod MCPE Jars ,PHP Files,Pocketmine, Genisys, Imagicalmine.zip to you pc.
