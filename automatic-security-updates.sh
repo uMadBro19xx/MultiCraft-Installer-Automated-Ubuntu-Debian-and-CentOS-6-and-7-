@@ -1,9 +1,5 @@
-
 #!/bin/bash
 # The MIT License (MIT)
-
-# Copyright (c) 2017 BlueLeafHosting, LLC
-# Copyright (c) 2017 MegaByteHosting
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -49,15 +45,3 @@ apt-get -y install cron-apt
 # Begin Debian
 elif [ "${DISTRO}" = "Debian" ] ; then
 apt-get -y install cron-apt
-# Begin CentOS
-elif [ "${DISTRO}" = "CentOS" ] ; then
-yum -y install yum-cron
-# Begin CentOS6
-if [ "${OS}" = "CentOS6" ] ; then
-/etc/init.d/yum-cron start
-chkconfig yum-cron on
-# Begin CentOS7
-elif [ "${OS}" = "CentOS7" ] ; then
-/bin/systemctl status yum-cron.service
-systemctl start yum-cron.service
-fi
