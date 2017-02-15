@@ -26,14 +26,13 @@
 
  echo
  echo "***"
- echo "*** Welcome to Multicraft 7 centos install script! (Custom)"
+ echo "*** Welcome to Multicraft installer script! (Supports Ubuntu, Debian and CentOS 6 and 7)"
  echo "***"
  echo
  echo "This installer will help you get Multicraft up and running also install all the packages and dependencies."
  echo "No changes are made to the system until all of the required information has been collected."
  echo
  echo "NOTE: This script automates the installation as described on the Multicraft website. Use it at your own risk."
- echo "Custom coded and edited by David Brockway."
  echo
  echo   
  
