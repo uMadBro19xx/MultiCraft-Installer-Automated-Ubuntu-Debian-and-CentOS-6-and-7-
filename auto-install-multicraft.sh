@@ -1,8 +1,7 @@
 #!/bin/bash
 # The MIT License (MIT)
 
-# Copyright (c) 2017 BlueLeafHosting, LLC
-# Copyright (c) 2017 MegaByteHosting
+# Copyright (c) 2016 Cory Gillenkirk
 
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +22,7 @@
 # SOFTWARE.
 
 # Supported Versions: Ubuntu, Debian and CentOS 6 and 7.
+
 
  echo
  echo "***"
@@ -372,6 +372,10 @@ mysql -e "SET PASSWORD FOR 'root'@'127.0.0.1' = PASSWORD('${MySQLRoot}');"
 mysql -Dmysql -e "DELETE FROM user WHERE Password='';"
 mysql -Dmysql -e "FLUSH PRIVILEGES;"
 
+echo "***"
+echo "*** You have successfully install Multicraft"
+echo "***"
+ 
 # TESTED: Everything above should work on all supported distros.
 
 # Configure New Admin Password
@@ -383,9 +387,3 @@ mysql -Dmysql -e "FLUSH PRIVILEGES;"
 
 # mysql -p${Panel} -u panel -D panel -e "UPDATE user SET password='${SaltPassword}' WHERE name='admin';"
 # mysql -p${Daemon} -u daemon -D daemon -e "UPDATE ftp_user SET password='${SaltPassword}' WHERE name='admin';"
-
-echo "***"
-echo "*** You have successfully install Multicraft"
-echo "***"
- 
-
