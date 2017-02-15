@@ -56,10 +56,8 @@ yum -y install yum-cron
 if [ "${OS}" = "CentOS6" ] ; then
 /etc/init.d/yum-cron start
 chkconfig yum-cron on
-yum update
 # Begin CentOS7
 elif [ "${OS}" = "CentOS7" ] ; then
 /bin/systemctl status yum-cron.service
 systemctl start yum-cron.service
-yum -y update
 fi
