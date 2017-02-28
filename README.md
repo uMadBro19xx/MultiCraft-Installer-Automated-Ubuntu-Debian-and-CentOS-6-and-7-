@@ -335,7 +335,9 @@ SELinux can also cause this error, to fix this you can either disable SELinux or
 chcon -u user_u -r object_r -t httpd_sys_content_t /var/www/multicraft
 Replace "/var/www/multicraft" with the path to your panel if it's different. 
 
+World External command failed: ERRO 255
 ===================
+
 world External command failed: erro 255 I can't backup any other worlds that don't have the defult world name "world"
 The erro means you can't back up any worlds on mcpe servers or mcpc servers that are do not use the defuolt world name "world", 
 follow the steps below and they will correct this issue.
