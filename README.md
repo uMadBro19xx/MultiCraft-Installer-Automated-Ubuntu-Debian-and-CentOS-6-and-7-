@@ -7,9 +7,11 @@
 yum -y install wget; apt-get -y install wget; wget https://raw.githubusercontent.com/DavidBrockway/MultiCraft-Installer-Automated-Ubuntu-Debian-and-CentOS-6-and-7-/master/auto-install-multicraft.sh -O auto-install-multicraft.sh; chmod +x auto-install-multicraft.sh; sh auto-install-multicraft.sh
 ```
 
+# Multicraft SystemD script 
+
 To install the SystemD script, enable it and start the Multicraft daemon you only need to issue the below three commands on your root shell:
 
-curl https://javapipe.com/files/multicraft-systemd.txt > /lib/systemd/system/multicraft.service
+curl https://raw.githubusercontent.com/DavidBrockway/MultiCraft-Installer-Automated-Ubuntu-Debian-and-CentOS-6-and-7-/master/multicraft-systemd.txt > /lib/systemd/system/multicraft.service
 systemctl enable multicraft
 systemctl start multicraft
 Please keep in mind that if you used any different settings during the setup process than what we used for this tutorial, you might have to edit paths in /lib/systemd/system/multicraft.service before enabling and starting the service.
